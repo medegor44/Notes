@@ -19,6 +19,6 @@ public class NotesController : ControllerBase
     [ProducesDefaultResponseType(typeof(NoteDto))]
     public Task<IResult> GetNote([FromRoute] Guid id)
     {
-        return Task.FromResult(Results.Ok(new NoteDto()));
+        return Task.FromResult(Results.Ok(new NoteDto {Id = id}));
     }
 }
